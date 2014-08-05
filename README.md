@@ -20,5 +20,5 @@ Or install it yourself as:
 
 see `example`
 
-![twitter](example/twitter.dot.png)
+![twitter](examples/twitter.dot.png)
 
