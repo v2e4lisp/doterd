@@ -1,0 +1,28 @@
+
+        digraph adlantis_sp {
+          concentrate="true";
+labelloc="t";
+nodesep="0.5";
+ratio="1.0";
+fontsize="13";
+pad="0.4,0.4";
+rankdir="LR";
+margin="0,0";
+
+          node [shape="Mrecord",fontsize="15",margin="0.07,0.05",penwidth="1.0"];
+          edge [fontsize="7",dir="both",arrowsize="1.4",penwidth="1.0",labelangle="32",labeldistance="1.8"];
+          users [label="TABLE users|id |name |email |created_at |update_at | "];
+followings [label="TABLE followings|id |follower_id |followee_id |deleted_at |created_at |updated_at | "];
+likes [label="TABLE likes|id |tweet_id |like_by |created_at |udpated_at | "];
+retweets [label="TABLE retweets|id |tweet_id |retweet_by |created_at |udpated_at | "];
+tweets [label="TABLE tweets|id |user_id |image_id |text |geo [String]\nsome comment|created_at [Time]\nComment|udpated_at | "];
+
+          users -> followings [arrowhead=inv, arrowtail=inv, dir=both];
+users -> likes [arrowhead=inv, arrowtail=odot, dir=both];
+users -> tweets [arrowhead=inv, arrowtail=odot, dir=both];
+users -> retweets [arrowhead=inv, arrowtail=odot, dir=both];
+tweets -> retweets [arrowhead=inv, arrowtail=odot, dir=both];
+tweets -> likes [arrowhead=inv, arrowtail=odot, dir=both];
+
+        }
+    
