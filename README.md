@@ -26,16 +26,15 @@ see `examples/twitter.rb`
 ```ruby
 require 'doterd'
 
+at_exit {
+  system("open twitter.dot.png")
+}
+
 include Doterd::Autodraw
 
 config { |c|
   c[:dot_filename] = './twitter.dot'
 }
-
-at_exit {
-  system("open twitter.dot.png")
-}
-
 
 table(:users) {
   id
